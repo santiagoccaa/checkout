@@ -1,0 +1,107 @@
+/* Content copied from "checkout5-custom.css" at 2019-03-01T05:12:59.334Z */
+
+/* /files/checkout5-custom.css */
+
+/* Displays the option to enter a foreign document */
+
+
+body {
+  background: white !important;
+}
+
+.document-box {
+  display: block;
+}
+
+/* Displays the option to enter an international phone */
+.phone-box {
+  display: block;
+}
+
+.terms-container {
+  margin-top : 20px;
+  padding    : 10px;
+  border-top : 1px solid #eee;
+  font-size  : 14px;
+  color      : #333;
+  display    : flex;
+  align-items: center;
+  gap        : 8px;
+}
+
+.terms-container label {
+  display    : flex;
+  align-items: center;
+  cursor     : pointer;
+  gap        : 8px;
+  font-size  : 12px;
+}
+
+#terms-label a {
+  color          : #E56A54;
+  text-decoration: underline;
+}
+
+#terms-label a:hover {
+  color: #003f8a;
+}
+
+#terms-popup {
+  position      : fixed;
+  top           : 50%;
+  left          : 50%;
+  transform     : translate(-50%, -50%);
+  background    : white;
+  border-radius : 8px;
+  box-shadow    : 0 4px 20px rgba(0, 0, 0, 0.2);
+  width         : 90%;
+  max-width     : 600px;
+  padding       : 24px;
+  z-index       : 9999;
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+}
+
+#accept-terms-button {
+  background-color: #1D2734;
+  color           : white;
+  border          : 2px solid #1D2734 !important;
+  padding         : 10px 20px;
+  margin-top      : 16px;
+  font-size       : 14px;
+  border-radius   : 4px;
+  cursor          : pointer;
+  transition      : 0.5s ease;
+  width           : 150px;
+}
+
+#accept-terms-button:hover {
+  background-color: white;
+  color           : #1D2734;
+}
+
+#terms-popup h3 {
+  font-size     : 20px;
+  text-transform: uppercase;
+}
+
+.custom-cart-template-wrap {
+  box-shadow: 0 0 40px 0 #878787;
+}
+
+.client-pre-email{
+  display: none !important;
+}
+
+/* Fondo Oscuro */
+#terms-overlay {
+  position  : fixed;
+  top       : 0;
+  left      : 0;
+  width     : 100%;
+  height    : 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index   : 9998;
+  display   : none;
+}
