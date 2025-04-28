@@ -1,21 +1,21 @@
+function checkTermsAndRedirect() {
+  const termsAccepted = localStorage.getItem('termsAccepted');
+  const currentStep = window.location.href;
+
+  if (termsAccepted !== 'true' && currentStep.includes('/checkout/#/shipping')) {
+    window.location.hash = '#/profile';
+  }
+}
+
+checkTermsAndRedirect();
+
+window.addEventListener('hashchange', checkTermsAndRedirect);
+setInterval(checkTermsAndRedirect, 500);
+
 document.addEventListener('DOMContentLoaded', function () {
+
   const observer = new MutationObserver(insertTermsCheckbox)
   observer.observe(document.body, { childList: true, subtree: true })
-
-  document.body.addEventListener(
-    'submit',
-    function (e) {
-      const form = e.target
-      const termsCheckbox = form.querySelector('#terms-checkbox')
-
-      if (termsCheckbox && !termsCheckbox.checked) {
-        e.preventDefault()
-        e.stopImmediatePropagation()
-        alert('Debes aceptar los términos y condiciones para continuar con la compra.')
-      }
-    },
-    true
-  )
 })
 
 document.addEventListener(
@@ -28,7 +28,7 @@ document.addEventListener(
       if (termsCheckbox && !termsCheckbox.checked) {
         e.preventDefault()
         e.stopImmediatePropagation()
-        alert('Debes aceptar los términos y condiciones para continuar con la compra.')
+        alert('Debes aceptar los términos y condiciones para continuar con la compra. uwuwuwuwuwu')
       }
     }
   },
@@ -46,7 +46,7 @@ function insertTermsCheckbox() {
     termsDiv.innerHTML = `
       <label style="cursor: pointer;">
         <input type="checkbox" id="terms-checkbox" disabled required/>
-        <span id="terms-label">Acepto los <a href="#" id="terms-link">términos y condicioneszzzz</a></span>
+        <span id="terms-label">Acepto los <a href="#" id="terms-link">términos y condiciones</a></span>
       </label>
     `
     container.parentNode.insertBefore(termsDiv, container.nextSibling)
@@ -83,7 +83,7 @@ function createTermsPopup() {
     popup.style.display = 'none'
     popup.innerHTML = `
       <h3>Terminos y condiciones</h3>
-      <p>Los terminos y condiciones son que debes darle al boton aceptar para poder avanzar 😂 ...​</p>
+      <p>Los terminos y condiciones son que debes darle al boton aceptar para poder avanzar...​</p>
       <button id="accept-terms-button">Aceptar</button>
     `
     document.body.appendChild(popup)

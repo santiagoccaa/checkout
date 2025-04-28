@@ -90,8 +90,12 @@ body {
   box-shadow: 0 0 40px 0 #878787;
 }
 
-.client-pre-email{
+.client-pre-email {
   display: none !important;
+}
+
+#go-to-shipping {
+  border-radius: 40px;
 }
 
 /* Fondo Oscuro */
